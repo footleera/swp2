@@ -1,0 +1,36 @@
+
+import sys
+from PyQt5.QtWidgets import (QWidget, QPushButton,
+    QHBoxLayout, QVBoxLayout, QApplication)
+from PyQt5.QtWidgets import (QComboBox, QTextEdit, QLineEdit)
+from PyQt5.QtCore import Qt
+
+class MainBoard(QWidget):
+
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        StartButton = QPushButton("Start")
+        StartButton.clicked.connect(self.startClicked)
+
+        RuleButton = QPushButton("Rule")
+        RuleButton.clicked.connect(self.ruleClicked)
+
+        RankingButton = QPushButton("Ranking")
+        RankingButton.clicked.connect(self.rankingClicked)
+
+        inputHbox = QHBoxLayout()
+        inputHbox.addStretch(1)
+        inputHbox.addWidget(StartButton)
+        inputHbox.addWidget(self.StartEdit)
+        inputHbox.addWidget(RuleButton)
+        inputHbox.addWidget(self.RuleEdit)
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MainBoard()
+    sys.exit(app.exec_())
+
+
