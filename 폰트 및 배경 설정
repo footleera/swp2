@@ -1,0 +1,28 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QLabel
+from PyQt5.QtGui import QFontDatabase
+from PyQt5.QtGui import QFont, QPalette, QImage, QBrush
+
+
+app = QApplication(sys.argv)
+
+#폰트 설정
+fontDB = QFontDatabase()
+fontDB.addApplicationFont(폰트)
+app.setFont(QFont(폰트))
+
+#배경색 지정
+pal = self.palette() 
+pal.setColor(self.backgroundRole(), Qt.색)
+#self.backgroundRole() -> 현재 객체의 배경을 알려주는 것
+
+self.setpalette(pal)
+
+#배경이미지 설정
+img = QImage(이미지경로)
+img.scaled(QSize(가로, 세로))
+p = self.palette()
+p.setBrush(10, QBrush(이미지객체)) #10은 window 배경색 
+self.setpalette(p)
+
+app.exec_()
